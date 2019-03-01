@@ -4,6 +4,7 @@
 *.htm
 *.o
 *.d
+Lib/
 *.crf
 *.dbgconf
 *.dep

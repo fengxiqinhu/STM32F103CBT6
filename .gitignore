@@ -1,0 +1,12 @@
+
+*.lnp
+*.htm
+*.htm
+*.o
+*.d
+*.crf
+*.dbgconf
+*.dep
+*.axf
+*.map
+*.lst

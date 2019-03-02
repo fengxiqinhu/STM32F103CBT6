@@ -8,7 +8,7 @@
 //设置PA1 - PA4推挽输出，频率50MHz
 void Gpio_configuration(void)
 {
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA , ENABLE);
+	RCC_GPIOAClock_ENABLE;
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -16,6 +16,23 @@ void Gpio_configuration(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 }
+
+//改变LED灯的状态（改变GPIO口的电平状态）
+//参数：GPIO外设；GPIO端口
+void LED_OpenOrClose(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+	if(GPIO_ReadOutputDataBit(GPIOx, GPIO_Pin) == 0)
+		GPIO_WriteBit(GPIOx, GPIO_Pin, Bit_SET);
+	else
+		GPIO_WriteBit(GPIOx, GPIO_Pin, Bit_RESET);
+
+
+}
+
+
+
+
+
 
 
 //示例1：
@@ -32,7 +49,7 @@ void led_demo1(void)
 void led_demo2(void)
 {
 	Gpio_configuration();
-	SysTick_Init();
+	SysTick_Configuration();
 	while(1)
 	{	
 		GPIO_WriteBit(GPIOA , GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 , Bit_RESET);
@@ -44,8 +61,22 @@ void led_demo2(void)
 
 }
 
+//示例3：
+//led间隔500ms亮灭
+//函数实现
+void led_demo3(void)
+{
+	Gpio_configuration();
+	SysTick_Configuration();
+	while(1)
+	{	
+		LED_OpenOrClose(GPIOA,  GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 );
+		delay_us(500000);
+		
+	}
 
 
+}
 
 
 

@@ -7,6 +7,7 @@
 
 #include "bsp_led.h"
 #include "bsp_SysTick.h"
+#include "bsp_key.h"
 
 #endif
 

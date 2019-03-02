@@ -541,6 +541,16 @@
               <FileType>1</FileType>
               <FilePath>.\User\bsp_SysTick.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\bsp_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>RCC_OR_CMD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\RCC_OR_CMD.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

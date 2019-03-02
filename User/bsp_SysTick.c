@@ -3,7 +3,7 @@ unsigned long TimingDelay;
 
 
 
-void SysTick_Init(void)
+void SysTick_Configuration(void)
 {
 	//库函数
 	//使用AHB时钟72MHz,并进入中断

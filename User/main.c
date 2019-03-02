@@ -3,7 +3,7 @@
 int main(void)
 {
 
-	led_demo2();
+	key_demo1();
 
 
 

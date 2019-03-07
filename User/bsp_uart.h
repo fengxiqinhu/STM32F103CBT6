@@ -1,22 +1,17 @@
 ///////////////////////////////////////////////////////////////////////////
 //	
-//	功能：Open103C按键实现
+//	功能：uart外设代码示例
 //
 /***************************************************************************/
 
-
-
-#ifndef __BSP_KEY_H__
-#define __BSP_KEY_H__
+#ifndef __BSP_UART_H__
+#define __BSP_UART_H__
 #include <stm32f10x.h>
-#include "bsp_SysTick.h"
 #include "RCC_OR_CMD.h"
+#include "bsp_SysTick.h"
+#include "stdio.h"
 
-#include "bsp_led.h"
+void Uart_Configuratio(void);
 
-
-void key_Configuration(void);
-int key(void);
-void key_demo1(void);
 #endif
 

@@ -551,6 +551,16 @@
               <FileType>5</FileType>
               <FilePath>.\User\RCC_OR_CMD.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\bsp_interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\bsp_uart.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

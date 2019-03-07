@@ -19,7 +19,7 @@ void key_Configuration(void)
 int key(void)
 {
 		while(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0));
-		delay_us(20000);//人一般按键时间为20毫秒
+		delay_us(10000);//人一般按键时间为20毫秒
 		if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0))
 			return 0;
 		while(!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0));
@@ -30,12 +30,13 @@ int key(void)
 //示例
 void key_demo1(void)
 {
-
+	SysTick_Configuration();
 	Gpio_configuration();
 	key_Configuration();
 	while(1)
 	{
 		if(1 == key())
+	//	if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0) == 0)	
 			LED_OpenOrClose(GPIOA , GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4);
 	}
 

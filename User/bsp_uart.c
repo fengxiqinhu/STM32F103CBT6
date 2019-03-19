@@ -56,17 +56,7 @@ int fputc(int c,FILE *fp)
 
 
 
-void USART1_IRQHandler(void)
-{
-	if( USART_GetITStatus(USART2, USART_IT_RXNE) == SET)
-	{
-	
-	
-	
-	}
 
-
-}
 
 
 

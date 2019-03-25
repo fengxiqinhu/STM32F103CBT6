@@ -1,6 +1,7 @@
 #include "main.h"
 int t0 = 32;
 int t1 = 22;
+extern int Temp;
 int main(void)
 {
 	init();
@@ -20,7 +21,7 @@ int main(void)
 	OLED_ShowCHinese(32,3,9);
 	OLED_ShowCHinese(48,3,10);
 	OLED_ShowChar(64,3,':');
-	OLED_ShowNum(80,3,t1,2,16);
+	OLED_ShowNum(80,3,Temp,2,16);
 	OLED_ShowCHinese(100,3,17);
 	//保温设置中/保温中
 	OLED_ShowChar(0,6,'>');
@@ -33,7 +34,11 @@ int main(void)
 	OLED_ShowChar(96,6,'<');
 	OLED_ShowChar(102,6,'<');
 	//Interrupt_demo1_Configuration();
-
+	while(1)
+	{
+		OLED_ShowNum(80,3,Temp,2,16);
+		delay_us(900000);
+	}
 //	OLED_ShowNum(30,4,i,5,16);
 //	OLED_ShowChar(37,4,'.');
 }

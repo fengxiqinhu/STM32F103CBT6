@@ -571,6 +571,11 @@
               <FileType>1</FileType>
               <FilePath>.\User\init.c</FilePath>
             </File>
+            <File>
+              <FileName>ds18b20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\ds18b20.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
